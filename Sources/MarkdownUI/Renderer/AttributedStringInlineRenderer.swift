@@ -131,6 +131,7 @@ private struct AttributedStringInlineRenderer {
     let savedAttributes = self.attributes
     self.attributes = self.textStyles.link.mergingAttributes(self.attributes)
     self.attributes.link = URL(string: destination, relativeTo: self.baseURL)
+    self.attributes.cursor = .pointingHand
 
     for child in children {
       self.render(child)
